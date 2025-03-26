@@ -58,5 +58,10 @@
 	},
 	"volta": {
 		"node": "22.12.0"
-	}
+	},
+	"overrides": {
+    "css-tree": {
+      "mdn-data": "mdn/data"
+    }
+  }
 }
