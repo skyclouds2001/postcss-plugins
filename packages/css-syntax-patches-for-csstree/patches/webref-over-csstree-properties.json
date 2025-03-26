@@ -3454,6 +3454,28 @@
 			"failing": []
 		}
 	},
+	"overflow-x": {
+		"type": "modified",
+		"comment": "",
+		"syntax-b": "visible | hidden | clip | scroll | auto | <-non-standard-overflow>",
+		"syntax-a": "visible | hidden | clip | scroll | auto",
+		"syntax-m": false,
+		"tests": {
+			"passing": [],
+			"failing": []
+		}
+	},
+	"overflow-y": {
+		"type": "modified",
+		"comment": "",
+		"syntax-b": "visible | hidden | clip | scroll | auto | <-non-standard-overflow>",
+		"syntax-a": "visible | hidden | clip | scroll | auto",
+		"syntax-m": false,
+		"tests": {
+			"passing": [],
+			"failing": []
+		}
+	},
 	"page-break-after": {
 		"type": "modified",
 		"comment": "",

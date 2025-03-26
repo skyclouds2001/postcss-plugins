@@ -1547,6 +1547,18 @@
 		"syntax-a": "<visual-box> || <length [0,∞]>",
 		"comment": ""
 	},
+	"overflow-x": {
+		"type": "modified",
+		"syntax-b": "visible | hidden | clip | scroll | auto | <-non-standard-overflow>",
+		"syntax-a": "visible | hidden | clip | scroll | auto",
+		"comment": ""
+	},
+	"overflow-y": {
+		"type": "modified",
+		"syntax-b": "visible | hidden | clip | scroll | auto | <-non-standard-overflow>",
+		"syntax-a": "visible | hidden | clip | scroll | auto",
+		"comment": ""
+	},
 	"page-break-after": {
 		"type": "modified",
 		"syntax-b": "auto | always | avoid | left | right | recto | verso",

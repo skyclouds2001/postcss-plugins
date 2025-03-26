@@ -143,12 +143,6 @@
 		"syntax-a": "<inset()> | <rect()> | <xywh()>",
 		"comment": ""
 	},
-	"bg-clip": {
-		"type": "modified",
-		"syntax-b": "<box> | border | text",
-		"syntax-a": "<visual-box> | border-area | text",
-		"comment": ""
-	},
 	"bg-image": {
 		"type": "modified",
 		"syntax-b": "none | <image>",
@@ -780,8 +774,8 @@
 		"comment": ""
 	},
 	"intrinsic-size-keyword": {
-		"type": "added",
-		"syntax-b": "",
+		"type": "modified",
+		"syntax-b": "min-content | max-content | fit-content",
 		"syntax-a": "auto | max-content | min-content | stretch",
 		"comment": ""
 	},

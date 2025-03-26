@@ -482,17 +482,6 @@
 			"failing": []
 		}
 	},
-	"bg-clip": {
-		"type": "modified",
-		"comment": "",
-		"syntax-b": "<box> | border | text",
-		"syntax-a": "<visual-box> | border-area | text",
-		"syntax-m": "<visual-box> | border-area | text",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
 	"bg-image": {
 		"type": "modified",
 		"comment": "",
@@ -1813,11 +1802,11 @@
 		}
 	},
 	"intrinsic-size-keyword": {
-		"type": "added",
-		"comment": "This list is incomplete",
-		"syntax-b": "",
+		"type": "modified",
+		"comment": "",
+		"syntax-b": "min-content | max-content | fit-content",
 		"syntax-a": "auto | max-content | min-content | stretch",
-		"syntax-m": "auto | max-content | min-content | stretch",
+		"syntax-m": false,
 		"tests": {
 			"passing": [],
 			"failing": []
