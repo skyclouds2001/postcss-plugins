@@ -155,12 +155,6 @@
 		"syntax-a": "<image> | none",
 		"comment": ""
 	},
-	"bg-layer": {
-		"type": "modified",
-		"syntax-b": "<bg-image> || <bg-position> [ / <bg-size> ]? || <repeat-style> || <attachment> || <box> || <box>",
-		"syntax-a": "<bg-image> || <bg-position> [ / <bg-size> ]? || <repeat-style> || <attachment> || <visual-box> || <visual-box>",
-		"comment": ""
-	},
 	"bg-position": {
 		"type": "modified",
 		"syntax-b": "[ [ left | center | right | top | bottom | <length-percentage> ] | [ left | center | right | <length-percentage> ] [ top | center | bottom | <length-percentage> ] | [ center | [ left | right ] <length-percentage>? ] && [ center | [ top | bottom ] <length-percentage>? ] ]",
@@ -192,8 +186,8 @@
 		"comment": ""
 	},
 	"box": {
-		"type": "modified",
-		"syntax-b": "border-box | padding-box | content-box",
+		"type": "added",
+		"syntax-b": "",
 		"syntax-a": "content-box | padding-box | border-box | margin-box | fill-box | stroke-box | view-box",
 		"comment": ""
 	},
@@ -216,15 +210,9 @@
 		"comment": ""
 	},
 	"calc-size-basis": {
-		"type": "added",
-		"syntax-b": "",
+		"type": "modified",
+		"syntax-b": "<intrinsic-size-keyword> | <calc-size()> | any | <calc-sum>",
 		"syntax-a": "[ <intrinsic-size-keyword> | <calc-size()> | any | <calc-sum> ]",
-		"comment": ""
-	},
-	"calc-size()": {
-		"type": "added",
-		"syntax-b": "",
-		"syntax-a": "calc-size( <calc-size-basis> , <calc-sum> )",
 		"comment": ""
 	},
 	"calc-value": {
@@ -461,22 +449,10 @@
 		"syntax-a": "$ <ident-token> ;",
 		"comment": ""
 	},
-	"custom-params": {
-		"type": "added",
-		"syntax-b": "",
-		"syntax-a": "<dashed-ident> [ <number> | <percentage> | none ]+",
-		"comment": ""
-	},
 	"custom-selector": {
 		"type": "added",
 		"syntax-b": "",
 		"syntax-a": "<custom-arg>? : <extension-name> [ ( <custom-arg>+#? ) ]? ;",
-		"comment": ""
-	},
-	"dasharray": {
-		"type": "added",
-		"syntax-b": "",
-		"syntax-a": "[ [ <length-percentage> | <number> ]+ ]#",
 		"comment": ""
 	},
 	"deprecated-color": {
@@ -527,12 +503,6 @@
 		"syntax-a": "<blur()> | <brightness()> | <contrast()> | <drop-shadow()> | <grayscale()> | <hue-rotate()> | <invert()> | <opacity()> | <sepia()> | <saturate()>",
 		"comment": ""
 	},
-	"filter-value-list": {
-		"type": "added",
-		"syntax-b": "",
-		"syntax-a": "[ <filter-function> | <url> ]+",
-		"comment": ""
-	},
 	"filter()": {
 		"type": "added",
 		"syntax-b": "",
@@ -541,7 +511,7 @@
 	},
 	"final-bg-layer": {
 		"type": "modified",
-		"syntax-b": "<'background-color'> || <bg-image> || <bg-position> [ / <bg-size> ]? || <repeat-style> || <attachment> || <box> || <box>",
+		"syntax-b": "<'background-color'> || <bg-image> || <bg-position> [ / <bg-size> ]? || <repeat-style> || <attachment> || <visual-box> || <visual-box>",
 		"syntax-a": "<bg-image> || <bg-position> [ / <bg-size> ]? || <repeat-style> || <attachment> || <visual-box> || <visual-box> || <'background-color'>",
 		"comment": ""
 	},
@@ -679,19 +649,19 @@
 	},
 	"hsl()": {
 		"type": "modified",
-		"syntax-b": "hsl( <hue> <percentage> <percentage> [ / <alpha-value> ]? ) | hsl( <hue> , <percentage> , <percentage> , <alpha-value>? )",
+		"syntax-b": "hsl( <hue> , <percentage> , <percentage> , <alpha-value>? ) | hsl( [ <hue> | none ] [ <percentage> | <number> | none ] [ <percentage> | <number> | none ] [ / [ <alpha-value> | none ] ]? )",
 		"syntax-a": "[ <legacy-hsl-syntax> | <modern-hsl-syntax> ]",
 		"comment": ""
 	},
 	"hsla()": {
 		"type": "modified",
-		"syntax-b": "hsla( <hue> <percentage> <percentage> [ / <alpha-value> ]? ) | hsla( <hue> , <percentage> , <percentage> , <alpha-value>? )",
+		"syntax-b": "hsla( <hue> , <percentage> , <percentage> , <alpha-value>? ) | hsla( [ <hue> | none ] [ <percentage> | <number> | none ] [ <percentage> | <number> | none ] [ / [ <alpha-value> | none ] ]? )",
 		"syntax-a": "[ <legacy-hsla-syntax> | <modern-hsla-syntax> ]",
 		"comment": ""
 	},
 	"hwb()": {
 		"type": "modified",
-		"syntax-b": "hwb( [ <hue> | none ] [ <percentage> | none ] [ <percentage> | none ] [ / [ <alpha-value> | none ] ]? )",
+		"syntax-b": "hwb( [ <hue> | none ] [ <percentage> | <number> | none ] [ <percentage> | <number> | none ] [ / [ <alpha-value> | none ] ]? )",
 		"syntax-a": "hwb( [ from <color> ]? [ <hue> | none ] [ <percentage> | <number> | none ] [ <percentage> | <number> | none ] [ / [ <alpha-value> | none ] ]? )",
 		"comment": ""
 	},
@@ -1091,12 +1061,6 @@
 		"syntax-a": "<integer [0,1]>",
 		"comment": ""
 	},
-	"named-color": {
-		"type": "modified",
-		"syntax-b": "transparent | aliceblue | antiquewhite | aqua | aquamarine | azure | beige | bisque | black | blanchedalmond | blue | blueviolet | brown | burlywood | cadetblue | chartreuse | chocolate | coral | cornflowerblue | cornsilk | crimson | cyan | darkblue | darkcyan | darkgoldenrod | darkgray | darkgreen | darkgrey | darkkhaki | darkmagenta | darkolivegreen | darkorange | darkorchid | darkred | darksalmon | darkseagreen | darkslateblue | darkslategray | darkslategrey | darkturquoise | darkviolet | deeppink | deepskyblue | dimgray | dimgrey | dodgerblue | firebrick | floralwhite | forestgreen | fuchsia | gainsboro | ghostwhite | gold | goldenrod | gray | green | greenyellow | grey | honeydew | hotpink | indianred | indigo | ivory | khaki | lavender | lavenderblush | lawngreen | lemonchiffon | lightblue | lightcoral | lightcyan | lightgoldenrodyellow | lightgray | lightgreen | lightgrey | lightpink | lightsalmon | lightseagreen | lightskyblue | lightslategray | lightslategrey | lightsteelblue | lightyellow | lime | limegreen | linen | magenta | maroon | mediumaquamarine | mediumblue | mediumorchid | mediumpurple | mediumseagreen | mediumslateblue | mediumspringgreen | mediumturquoise | mediumvioletred | midnightblue | mintcream | mistyrose | moccasin | navajowhite | navy | oldlace | olive | olivedrab | orange | orangered | orchid | palegoldenrod | palegreen | paleturquoise | palevioletred | papayawhip | peachpuff | peru | pink | plum | powderblue | purple | rebeccapurple | red | rosybrown | royalblue | saddlebrown | salmon | sandybrown | seagreen | seashell | sienna | silver | skyblue | slateblue | slategray | slategrey | snow | springgreen | steelblue | tan | teal | thistle | tomato | turquoise | violet | wheat | white | whitesmoke | yellow | yellowgreen",
-		"syntax-a": "aliceblue | antiquewhite | aqua | aquamarine | azure | beige | bisque | black | blanchedalmond | blue | blueviolet | brown | burlywood | cadetblue | chartreuse | chocolate | coral | cornflowerblue | cornsilk | crimson | cyan | darkblue | darkcyan | darkgoldenrod | darkgray | darkgreen | darkgrey | darkkhaki | darkmagenta | darkolivegreen | darkorange | darkorchid | darkred | darksalmon | darkseagreen | darkslateblue | darkslategray | darkslategrey | darkturquoise | darkviolet | deeppink | deepskyblue | dimgray | dimgrey | dodgerblue | firebrick | floralwhite | forestgreen | fuchsia | gainsboro | ghostwhite | gold | goldenrod | gray | green | greenyellow | grey | honeydew | hotpink | indianred | indigo | ivory | khaki | lavender | lavenderblush | lawngreen | lemonchiffon | lightblue | lightcoral | lightcyan | lightgoldenrodyellow | lightgray | lightgreen | lightgrey | lightpink | lightsalmon | lightseagreen | lightskyblue | lightslategray | lightslategrey | lightsteelblue | lightyellow | lime | limegreen | linen | magenta | maroon | mediumaquamarine | mediumblue | mediumorchid | mediumpurple | mediumseagreen | mediumslateblue | mediumspringgreen | mediumturquoise | mediumvioletred | midnightblue | mintcream | mistyrose | moccasin | navajowhite | navy | oldlace | olive | olivedrab | orange | orangered | orchid | palegoldenrod | palegreen | paleturquoise | palevioletred | papayawhip | peachpuff | peru | pink | plum | powderblue | purple | rebeccapurple | red | rosybrown | royalblue | saddlebrown | salmon | sandybrown | seagreen | seashell | sienna | silver | skyblue | slateblue | slategray | slategrey | snow | springgreen | steelblue | tan | teal | thistle | tomato | turquoise | violet | wheat | white | whitesmoke | yellow | yellowgreen",
-		"comment": ""
-	},
 	"number-optional-number": {
 		"type": "added",
 		"syntax-b": "",
@@ -1113,12 +1077,6 @@
 		"type": "modified",
 		"syntax-b": "oklch( [ <percentage> | <number> | none ] [ <percentage> | <number> | none ] [ <hue> | none ] [ / [ <alpha-value> | none ] ]? )",
 		"syntax-a": "oklch( [ from <color> ]? [ <percentage> | <number> | none ] [ <percentage> | <number> | none ] [ <hue> | none ] [ / [ <alpha-value> | none ] ]? )",
-		"comment": ""
-	},
-	"opacity-value": {
-		"type": "added",
-		"syntax-b": "",
-		"syntax-a": "<number> | <percentage>",
 		"comment": ""
 	},
 	"opentype-tag": {
@@ -1149,18 +1107,6 @@
 		"type": "modified",
 		"syntax-b": "none | <color> | <url> [ none | <color> ]? | context-fill | context-stroke",
 		"syntax-a": "none | <image> | <svg-paint>",
-		"comment": ""
-	},
-	"paint-box": {
-		"type": "added",
-		"syntax-b": "",
-		"syntax-a": "<visual-box> | fill-box | stroke-box",
-		"comment": ""
-	},
-	"palette-mix()": {
-		"type": "added",
-		"syntax-b": "",
-		"syntax-a": "palette-mix( <color-interpolation-method> , [ [ normal | light | dark | <palette-identifier> | <palette-mix()> ] && <percentage [0,100]>? ]#{2} )",
 		"comment": ""
 	},
 	"points": {
@@ -1253,12 +1199,6 @@
 		"syntax-a": "( <container-query> ) | ( <size-feature> ) | style( <style-query> ) | scroll-state( <scroll-state-query> ) | <general-enclosed>",
 		"comment": ""
 	},
-	"radial-extent": {
-		"type": "added",
-		"syntax-b": "",
-		"syntax-a": "closest-corner | closest-side | farthest-corner | farthest-side",
-		"comment": ""
-	},
 	"radial-gradient-syntax": {
 		"type": "added",
 		"syntax-b": "",
@@ -1277,13 +1217,7 @@
 		"syntax-a": "circle | ellipse",
 		"comment": ""
 	},
-	"radial-size": {
-		"type": "added",
-		"syntax-b": "",
-		"syntax-a": "<radial-extent> | <length [0,∞]> | <length-percentage [0,∞]>{2}",
-		"comment": ""
-	},
-	"random-item-args": {
+	"random-caching-options": {
 		"type": "added",
 		"syntax-b": "",
 		"syntax-a": "random-item( <declaration-value> , [ <declaration-value>? ]# )",
@@ -1381,13 +1315,13 @@
 	},
 	"rgb()": {
 		"type": "modified",
-		"syntax-b": "rgb( <percentage>{3} [ / <alpha-value> ]? ) | rgb( <number>{3} [ / <alpha-value> ]? ) | rgb( <percentage>#{3} , <alpha-value>? ) | rgb( <number>#{3} , <alpha-value>? )",
+		"syntax-b": "rgb( <percentage>#{3} , <alpha-value>? ) | rgb( <number>#{3} , <alpha-value>? ) | rgb( [ <number> | <percentage> | none ]{3} [ / [ <alpha-value> | none ] ]? )",
 		"syntax-a": "[ <legacy-rgb-syntax> | <modern-rgb-syntax> ]",
 		"comment": ""
 	},
 	"rgba()": {
 		"type": "modified",
-		"syntax-b": "rgba( <percentage>{3} [ / <alpha-value> ]? ) | rgba( <number>{3} [ / <alpha-value> ]? ) | rgba( <percentage>#{3} , <alpha-value>? ) | rgba( <number>#{3} , <alpha-value>? )",
+		"syntax-b": "rgba( <percentage>#{3} , <alpha-value>? ) | rgba( <number>#{3} , <alpha-value>? ) | rgba( [ <number> | <percentage> | none ]{3} [ / [ <alpha-value> | none ] ]? )",
 		"syntax-a": "[ <legacy-rgba-syntax> | <modern-rgba-syntax> ]",
 		"comment": ""
 	},
@@ -1433,22 +1367,10 @@
 		"syntax-a": "not <scroll-state-in-parens> | <scroll-state-in-parens> [ [ and <scroll-state-in-parens> ]* | [ or <scroll-state-in-parens> ]* ] | <scroll-state-feature>",
 		"comment": ""
 	},
-	"scroll()": {
-		"type": "modified",
-		"syntax-b": "scroll( [ <axis> || <scroller> ]? )",
-		"syntax-a": "scroll( [ <scroller> || <axis> ]? )",
-		"comment": ""
-	},
 	"shadow": {
 		"type": "modified",
 		"syntax-b": "inset? && <length>{2,4} && <color>?",
 		"syntax-a": "<color>? && [ <length>{2} <length [0,∞]>? <length>? ] && inset?",
-		"comment": ""
-	},
-	"shape-box": {
-		"type": "modified",
-		"syntax-b": "<box> | margin-box",
-		"syntax-a": "<visual-box> | margin-box",
 		"comment": ""
 	},
 	"shape-command": {
@@ -1595,18 +1517,6 @@
 		"syntax-a": "child | child( <integer> )",
 		"comment": ""
 	},
-	"symbols-type": {
-		"type": "added",
-		"syntax-b": "",
-		"syntax-a": "cyclic | numeric | alphabetic | symbolic | fixed",
-		"comment": ""
-	},
-	"symbols()": {
-		"type": "added",
-		"syntax-b": "",
-		"syntax-a": "symbols( <symbols-type>? [ <string> | <image> ]+ )",
-		"comment": ""
-	},
 	"syntax": {
 		"type": "added",
 		"syntax-b": "",
@@ -1656,8 +1566,8 @@
 		"comment": ""
 	},
 	"text-edge": {
-		"type": "added",
-		"syntax-b": "",
+		"type": "modified",
+		"syntax-b": "[ text | cap | ex | ideographic | ideographic-ink ] [ text | alphabetic | ideographic | ideographic-ink ]?",
 		"syntax-a": "[ text | ideographic | ideographic-ink ] | [ text | ideographic | ideographic-ink | cap | ex ] [ text | ideographic | ideographic-ink | alphabetic ]",
 		"comment": ""
 	},
@@ -1743,12 +1653,6 @@
 		"type": "added",
 		"syntax-b": "",
 		"syntax-a": "wcag2 | wcag2( [ <number> | [ aa | aaa ] && large? ] )",
-		"comment": ""
-	},
-	"xyz": {
-		"type": "added",
-		"syntax-b": "",
-		"syntax-a": "xyz | xyz-d50 | xyz-d65",
 		"comment": ""
 	},
 	"xyz-params": {

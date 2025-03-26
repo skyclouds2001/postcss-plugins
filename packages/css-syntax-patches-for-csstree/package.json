@@ -62,5 +62,10 @@
 	],
 	"volta": {
 		"extends": "../../package.json"
+	},
+	"overrides": {
+		"css-tree": {
+			"mdn-data": "mdn/data"
+		}
 	}
 }
