@@ -61,6 +61,7 @@
 	},
 	"overrides": {
     "css-tree": {
+			".": "eslint/csstree",
       "mdn-data": "mdn/data"
     }
   }

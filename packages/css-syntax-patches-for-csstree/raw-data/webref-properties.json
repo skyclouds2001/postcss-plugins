@@ -104,12 +104,6 @@
 	"background-clip": {
 		"syntax": "<bg-clip>#"
 	},
-	"-moz-background-clip": {
-		"syntax": "padding | border"
-	},
-	"-webkit-background-clip": {
-		"syntax": "[ <box> | border | padding | content | text ]#"
-	},
 	"background-color": {
 		"syntax": "<color>"
 	},
@@ -1687,6 +1681,9 @@
 	},
 	"position-try-fallbacks": {
 		"syntax": "none | [ [ <dashed-ident> || <try-tactic> ] | <'position-area'> ]#"
+	},
+	"position-try-options": {
+		"syntax": "<'position-try-fallbacks'>"
 	},
 	"position-try-order": {
 		"syntax": "normal | <try-size>"

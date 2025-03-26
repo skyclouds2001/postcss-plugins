@@ -40,7 +40,7 @@
 	},
 	"devDependencies": {
 		"@webref/css": "^6.18.1",
-		"css-tree": "^3.1.0"
+		"css-tree": "eslint/csstree"
 	},
 	"scripts": {
 		"build": "node ./scripts/index.mjs",
@@ -65,6 +65,7 @@
 	},
 	"overrides": {
 		"css-tree": {
+			".": "eslint/csstree",
 			"mdn-data": "mdn/data"
 		}
 	}
