@@ -1211,7 +1211,7 @@
 		"syntax-a": "circle | ellipse",
 		"comment": ""
 	},
-	"random-caching-options": {
+	"random-item-args": {
 		"type": "added",
 		"syntax-b": "",
 		"syntax-a": "random-item( <declaration-value> , [ <declaration-value>? ]# )",

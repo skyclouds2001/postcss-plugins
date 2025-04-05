@@ -1625,6 +1625,72 @@
 			"failing": []
 		}
 	},
+	"ictcp()": {
+		"type": "added",
+		"comment": "",
+		"syntax-b": "",
+		"syntax-a": "ictcp( [ from <color> ]? [ <percentage> | <number> | none ] [ <percentage> | <number> | none ] [ <percentage> | <number> | none ] [ / [ <alpha-value> | none ] ]? )",
+		"syntax-m": "ictcp( [ from <color> ]? [ <percentage> | <number> | none ] [ <percentage> | <number> | none ] [ <percentage> | <number> | none ] [ / [ <alpha-value> | none ] ]? )",
+		"tests": {
+			"passing": [],
+			"failing": []
+		}
+	},
+	"ident-arg": {
+		"type": "added",
+		"comment": "",
+		"syntax-b": "",
+		"syntax-a": "<string> | <integer> | <ident>",
+		"syntax-m": "<string> | <integer> | <ident>",
+		"tests": {
+			"passing": [],
+			"failing": []
+		}
+	},
+	"ident()": {
+		"type": "added",
+		"comment": "",
+		"syntax-b": "",
+		"syntax-a": "ident( <ident-arg>+ )",
+		"syntax-m": "ident( <ident-arg>+ )",
+		"tests": {
+			"passing": [],
+			"failing": []
+		}
+	},
+	"if-args": {
+		"type": "added",
+		"comment": "",
+		"syntax-b": "",
+		"syntax-a": "if( [ <if-args-branch> ; ]* <if-args-branch> ;? )",
+		"syntax-m": "if( [ <if-args-branch> ; ]* <if-args-branch> ;? )",
+		"tests": {
+			"passing": [],
+			"failing": []
+		}
+	},
+	"if-args-branch": {
+		"type": "added",
+		"comment": "",
+		"syntax-b": "",
+		"syntax-a": "<declaration-value> : <declaration-value>?",
+		"syntax-m": "<declaration-value> : <declaration-value>?",
+		"tests": {
+			"passing": [],
+			"failing": []
+		}
+	},
+	"if-branch": {
+		"type": "added",
+		"comment": "",
+		"syntax-b": "",
+		"syntax-a": "<if-condition> : <declaration-value>?",
+		"syntax-m": "<if-condition> : <declaration-value>?",
+		"tests": {
+			"passing": [],
+			"failing": []
+		}
+	},
 	"if-condition": {
 		"type": "added",
 		"comment": "",
@@ -3086,7 +3152,7 @@
 			"failing": []
 		}
 	},
-	"random-caching-options": {
+	"random-item-args": {
 		"type": "added",
 		"comment": "",
 		"syntax-b": "",

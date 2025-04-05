@@ -1343,54 +1343,6 @@
 		"syntax-a": "[ <number> | <percentage> ]{1,4} fill?",
 		"comment": ""
 	},
-	"masonry": {
-		"type": "added",
-		"syntax-b": "",
-		"syntax-a": "<'masonry-template-areas'> || <'masonry-template-tracks'> || <'masonry-direction'> || <'masonry-fill'>",
-		"comment": ""
-	},
-	"masonry-auto-tracks": {
-		"type": "added",
-		"syntax-b": "",
-		"syntax-a": "<'grid-auto-columns'>",
-		"comment": ""
-	},
-	"masonry-direction": {
-		"type": "added",
-		"syntax-b": "",
-		"syntax-a": "row | column | row-reverse | column-reverse",
-		"comment": ""
-	},
-	"masonry-fill": {
-		"type": "added",
-		"syntax-b": "",
-		"syntax-a": "normal | reverse",
-		"comment": ""
-	},
-	"masonry-flow": {
-		"type": "added",
-		"syntax-b": "",
-		"syntax-a": "<'masonry-direction'> || <'masonry-fill'>",
-		"comment": ""
-	},
-	"masonry-slack": {
-		"type": "added",
-		"syntax-b": "",
-		"syntax-a": "<length-percentage> | infinite",
-		"comment": ""
-	},
-	"masonry-template-areas": {
-		"type": "added",
-		"syntax-b": "",
-		"syntax-a": "none | <string>",
-		"comment": ""
-	},
-	"masonry-template-tracks": {
-		"type": "added",
-		"syntax-b": "",
-		"syntax-a": "none | <track-list> | <masonry-auto-track-list> | subgrid <line-name-list>?",
-		"comment": ""
-	},
 	"max-height": {
 		"type": "modified",
 		"syntax-b": "none | <length-percentage [0,∞]> | min-content | max-content | fit-content | fit-content( <length-percentage [0,∞]> ) | <calc-size()> | <anchor-size()> | stretch | <-non-standard-size>",
