@@ -100,17 +100,6 @@
 					"failing": []
 				}
 			},
-			"font-display": {
-				"type": "modified",
-				"comment": "",
-				"syntax-b": "[ auto | block | swap | fallback | optional ]",
-				"syntax-a": "auto | block | swap | fallback | optional",
-				"syntax-m": "[ auto | block | swap | fallback | optional ]",
-				"tests": {
-					"passing": [],
-					"failing": []
-				}
-			},
 			"font-language-override": {
 				"type": "added",
 				"comment": "",
@@ -264,37 +253,6 @@
 					"passing": [],
 					"failing": []
 				}
-			},
-			"unicode-range": {
-				"type": "modified",
-				"comment": "",
-				"syntax-b": "<urange>#",
-				"syntax-a": "<unicode-range-token>#",
-				"syntax-m": "<unicode-range-token>#",
-				"tests": {
-					"passing": [
-						{
-							"value": "U+4E00-9FFF"
-						},
-						{
-							"value": "U+30??"
-						},
-						{
-							"value": "u+?"
-						}
-					],
-					"failing": [
-						{
-							"value": "-9FFF"
-						},
-						{
-							"value": "u--"
-						},
-						{
-							"value": "u++"
-						}
-					]
-				}
 			}
 		}
 	},
@@ -390,21 +348,6 @@
 			}
 		}
 	},
-	"font-palette-values": {
-		"descriptors": {
-			"override-colors": {
-				"type": "modified",
-				"comment": "",
-				"syntax-b": "[ <integer [0,∞]> <absolute-color-base> ]#",
-				"syntax-a": "[ <integer [0,∞]> <color> ]#",
-				"syntax-m": "[ <integer [0,∞]> <color> ]#",
-				"tests": {
-					"passing": [],
-					"failing": []
-				}
-			}
-		}
-	},
 	"function": {
 		"descriptors": {
 			"result": {
@@ -428,32 +371,6 @@
 				"syntax-b": "<length>{1,2} | auto | [ <page-size> || [ portrait | landscape ] ]",
 				"syntax-a": "<length [0,∞]>{1,2} | auto | [ <page-size> || [ portrait | landscape ] ]",
 				"syntax-m": "<length [0,∞]>{1,2} | auto | [ <page-size> || [ portrait | landscape ] ]",
-				"tests": {
-					"passing": [],
-					"failing": []
-				}
-			}
-		}
-	},
-	"view-transition": {
-		"descriptors": {
-			"navigation": {
-				"type": "added",
-				"comment": "",
-				"syntax-b": "",
-				"syntax-a": "auto | none",
-				"syntax-m": "auto | none",
-				"tests": {
-					"passing": [],
-					"failing": []
-				}
-			},
-			"types": {
-				"type": "added",
-				"comment": "",
-				"syntax-b": "",
-				"syntax-a": "none | <custom-ident>+",
-				"syntax-m": "none | <custom-ident>+",
 				"tests": {
 					"passing": [],
 					"failing": []

@@ -113,9 +113,6 @@
 	"aspect-ratio": {
 		"syntax": "auto || <ratio>"
 	},
-	"azimuth": {
-		"syntax": "<angle> | [ [ left-side | far-left | left | center-left | center | center-right | right | far-right | right-side ] || behind ] | leftwards | rightwards"
-	},
 	"backdrop-filter": {
 		"syntax": "none | <filter-value-list>"
 	},
@@ -138,7 +135,7 @@
 		"syntax": "padding | border"
 	},
 	"-webkit-background-clip": {
-		"syntax": "[ <box> | border | padding | content | text ]#"
+		"syntax": "[ <visual-box> | border | padding | content | text ]#"
 	},
 	"background-color": {
 		"syntax": "<color>"
@@ -1362,7 +1359,7 @@
 		"syntax": "<mask-layer>#"
 	},
 	"-webkit-mask": {
-		"syntax": "[ <mask-reference> || <position> [ / <bg-size> ]? || <repeat-style> || [ <box> | border | padding | content | text ] || [ <box> | border | padding | content ] ]#"
+		"syntax": "[ <mask-reference> || <position> [ / <bg-size> ]? || <repeat-style> || [ <visual-box> | border | padding | content | text ] || [ <visual-box> | border | padding | content ] ]#"
 	},
 	"-webkit-mask-attachment": {
 		"syntax": "<attachment>#"
@@ -1395,7 +1392,7 @@
 		"syntax": "[ <coord-box> | no-clip ]#"
 	},
 	"-webkit-mask-clip": {
-		"syntax": "[ <box> | border | padding | content | text ]#"
+		"syntax": "[ <coord-box> | no-clip | border | padding | content | text ]#"
 	},
 	"mask-composite": {
 		"syntax": "<compositing-operator>#"
@@ -1416,7 +1413,7 @@
 		"syntax": "<coord-box>#"
 	},
 	"-webkit-mask-origin": {
-		"syntax": "[ <box> | border | padding | content ]#"
+		"syntax": "[ <coord-box> | border | padding | content ]#"
 	},
 	"mask-position": {
 		"syntax": "<position>#"
@@ -1751,6 +1748,9 @@
 	"position-try-fallbacks": {
 		"syntax": "none | [ [ <dashed-ident> || <try-tactic> ] | <'position-area'> ]#"
 	},
+	"position-try-options": {
+		"syntax": "<'position-try-fallbacks'>"
+	},
 	"position-try-order": {
 		"syntax": "normal | <try-size>"
 	},
@@ -2081,11 +2081,14 @@
 	"speak-as": {
 		"syntax": "normal | spell-out || digits || [ literal-punctuation | no-punctuation ]"
 	},
-	"src": {
-		"syntax": "[ <url> [ format( <string># ) ]? | local( <family-name> ) ]#"
-	},
 	"-moz-stack-sizing": {
 		"syntax": "ignore | stretch-to-fit"
+	},
+	"stop-color": {
+		"syntax": "<'color'>"
+	},
+	"stop-opacity": {
+		"syntax": "<'opacity'>"
 	},
 	"string-set": {
 		"syntax": "none | [ <custom-ident> <string>+ ]#"
@@ -2356,9 +2359,6 @@
 	},
 	"unicode-bidi": {
 		"syntax": "normal | embed | isolate | bidi-override | isolate-override | plaintext"
-	},
-	"unicode-range": {
-		"syntax": "<urange>#"
 	},
 	"-webkit-user-drag": {
 		"syntax": "none | element | auto"

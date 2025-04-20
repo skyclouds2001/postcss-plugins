@@ -1,106 +1,4 @@
 {
-	"anchor-size()": {
-		"type": "modified",
-		"comment": "",
-		"syntax-b": "anchor-size( [ <anchor-element> || <anchor-size> ]? , <length-percentage>? )",
-		"syntax-a": "anchor-size( [ <anchor-name> || <anchor-size> ]? , <length-percentage>? )",
-		"syntax-m": "anchor-size( [ <anchor-name> || <anchor-size> ]? , <length-percentage>? )",
-		"tests": {
-			"passing": [
-				{
-					"property": "top",
-					"value": "anchor-size(--foo)"
-				},
-				{
-					"property": "top",
-					"value": "anchor-size(width)"
-				},
-				{
-					"property": "top",
-					"value": "anchor-size(self-block)"
-				},
-				{
-					"property": "top",
-					"value": "anchor-size(--foo, 10px)"
-				},
-				{
-					"property": "top",
-					"value": "anchor-size(width, 10%)"
-				},
-				{
-					"property": "top",
-					"value": "anchor-size(10px)"
-				}
-			],
-			"failing": [
-				{
-					"property": "top",
-					"value": "anchor-size(foo)"
-				},
-				{
-					"property": "top",
-					"value": "anchor-size(10)"
-				}
-			]
-		}
-	},
-	"anchor()": {
-		"type": "modified",
-		"comment": "",
-		"syntax-b": "anchor( <anchor-element>? && <anchor-side> , <length-percentage>? )",
-		"syntax-a": "anchor( <anchor-name>? && <anchor-side> , <length-percentage>? )",
-		"syntax-m": "anchor( <anchor-name>? && <anchor-side> , <length-percentage>? )",
-		"tests": {
-			"passing": [
-				{
-					"property": "top",
-					"value": "anchor(--foo left)"
-				},
-				{
-					"property": "top",
-					"value": "anchor(top)"
-				},
-				{
-					"property": "top",
-					"value": "anchor(left)"
-				},
-				{
-					"property": "top",
-					"value": "anchor(--foo left, 10px)"
-				},
-				{
-					"property": "top",
-					"value": "anchor(top, 10%)"
-				},
-				{
-					"property": "top",
-					"value": "anchor(10%, 10%)"
-				},
-				{
-					"property": "top",
-					"value": "anchor(10%)"
-				}
-			],
-			"failing": [
-				{
-					"property": "top",
-					"value": "anchor(foo)"
-				},
-				{
-					"property": "top",
-					"value": "anchor(--foo)"
-				},
-				{
-					"property": "top",
-					"value": "anchor(10)"
-				},
-				{
-					"property": "top",
-					"value": "anchor(10px)"
-				}
-			]
-		}
-	},
 	"angle-percentage": {
 		"type": "modified",
 		"comment": "",
@@ -124,94 +22,6 @@
 					"value": "conic-gradient(red 10px, blue)"
 				}
 			]
-		}
-	},
-	"angular-color-hint": {
-		"type": "modified",
-		"comment": "",
-		"syntax-b": "<angle-percentage>",
-		"syntax-a": "<angle-percentage> | <zero>",
-		"syntax-m": "| <zero>",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"angular-color-stop": {
-		"type": "modified",
-		"comment": "",
-		"syntax-b": "<color> && <color-stop-angle>?",
-		"syntax-a": "<color> <color-stop-angle>?",
-		"syntax-m": "<color> <color-stop-angle>?",
-		"tests": {
-			"passing": [
-				{
-					"property": "background",
-					"value": "conic-gradient(red, blue)"
-				},
-				{
-					"property": "background",
-					"value": "conic-gradient(red 0deg, blue)"
-				}
-			],
-			"failing": [
-				{
-					"property": "background",
-					"value": "conic-gradient(0deg red, blue)"
-				},
-				{
-					"property": "background",
-					"value": "conic-gradient(0deg, blue)"
-				}
-			]
-		}
-	},
-	"angular-color-stop-list": {
-		"type": "modified",
-		"comment": "",
-		"syntax-b": "[ <angular-color-stop> [, <angular-color-hint> ]? ]# , <angular-color-stop>",
-		"syntax-a": "<angular-color-stop> , [ <angular-color-hint>? , <angular-color-stop> ]#?",
-		"syntax-m": "<angular-color-stop> , [ <angular-color-hint>? , <angular-color-stop> ]#?",
-		"tests": {
-			"passing": [
-				{
-					"property": "background",
-					"value": "conic-gradient(red)"
-				},
-				{
-					"property": "background",
-					"value": "conic-gradient(red 0deg)"
-				},
-				{
-					"property": "background",
-					"value": "conic-gradient(red, blue)"
-				},
-				{
-					"property": "background",
-					"value": "conic-gradient(red 0deg, blue)"
-				},
-				{
-					"property": "background",
-					"value": "conic-gradient(red, blue 180deg)"
-				},
-				{
-					"property": "background",
-					"value": "conic-gradient(red 0deg, blue 180deg)"
-				},
-				{
-					"property": "background",
-					"value": "conic-gradient(red 0deg, blue)"
-				},
-				{
-					"property": "background",
-					"value": "conic-gradient(red, orange, blue)"
-				},
-				{
-					"property": "background",
-					"value": "conic-gradient(red, 10deg, blue)"
-				}
-			],
-			"failing": []
 		}
 	},
 	"arc-command": {
@@ -471,45 +281,12 @@
 			]
 		}
 	},
-	"basic-shape-rect": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "<inset()> | <rect()> | <xywh()>",
-		"syntax-m": "<inset()> | rect( [ <length-percentage> | auto ]{4} [ round <'border-radius'> ]? ) | xywh( <length-percentage>{2} <length-percentage [0,∞]>{2} [ round <'border-radius'> ]? )",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"bg-clip": {
-		"type": "modified",
-		"comment": "",
-		"syntax-b": "<box> | border | text",
-		"syntax-a": "<visual-box> | border-area | text",
-		"syntax-m": "<visual-box> | border-area | text",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
 	"bg-image": {
 		"type": "modified",
 		"comment": "",
 		"syntax-b": "none | <image>",
 		"syntax-a": "<image> | none",
 		"syntax-m": "none | <image>",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"bg-layer": {
-		"type": "modified",
-		"comment": "",
-		"syntax-b": "<bg-image> || <bg-position> [ / <bg-size> ]? || <repeat-style> || <attachment> || <box> || <box>",
-		"syntax-a": "<bg-image> || <bg-position> [ / <bg-size> ]? || <repeat-style> || <attachment> || <visual-box> || <visual-box>",
-		"syntax-m": "<bg-image> || <bg-position> [ / <bg-size> ]? || <repeat-style> || <attachment> || <visual-box> || <visual-box>",
 		"tests": {
 			"passing": [],
 			"failing": []
@@ -605,11 +382,11 @@
 		}
 	},
 	"box": {
-		"type": "modified",
+		"type": "added",
 		"comment": "",
-		"syntax-b": "border-box | padding-box | content-box",
+		"syntax-b": "",
 		"syntax-a": "content-box | padding-box | border-box | margin-box | fill-box | stroke-box | view-box",
-		"syntax-m": "| margin-box | fill-box | stroke-box | view-box",
+		"syntax-m": "content-box | padding-box | border-box | margin-box | fill-box | stroke-box | view-box",
 		"tests": {
 			"passing": [],
 			"failing": []
@@ -649,22 +426,11 @@
 		}
 	},
 	"calc-size-basis": {
-		"type": "added",
+		"type": "modified",
 		"comment": "",
-		"syntax-b": "",
+		"syntax-b": "<intrinsic-size-keyword> | <calc-size()> | any | <calc-sum>",
 		"syntax-a": "[ <intrinsic-size-keyword> | <calc-size()> | any | <calc-sum> ]",
-		"syntax-m": "[ <intrinsic-size-keyword> | <calc-size()> | any | <calc-sum> ]",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"calc-size()": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "calc-size( <calc-size-basis> , <calc-sum> )",
-		"syntax-m": "calc-size( <calc-size-basis> , <calc-sum> )",
+		"syntax-m": false,
 		"tests": {
 			"passing": [],
 			"failing": []
@@ -766,28 +532,6 @@
 		"syntax-b": "",
 		"syntax-a": "color-layers( [ <blend-mode> , ]? <color># )",
 		"syntax-m": "color-layers( [ <blend-mode> , ]? <color># )",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"color-stop-angle": {
-		"type": "modified",
-		"comment": "",
-		"syntax-b": "<angle-percentage>{1,2}",
-		"syntax-a": "[ <angle-percentage> | <zero> ]{1,2}",
-		"syntax-m": "[ <angle-percentage> | <zero> ]{1,2}",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"color-stop-list": {
-		"type": "modified",
-		"comment": "",
-		"syntax-b": "[ <linear-color-stop> [, <linear-color-hint> ]? ]# , <linear-color-stop>",
-		"syntax-a": "<linear-color-stop> , [ <linear-color-hint>? , <linear-color-stop> ]#?",
-		"syntax-m": "<linear-color-stop> , [ <linear-color-hint>? , <linear-color-stop> ]#?",
 		"tests": {
 			"passing": [],
 			"failing": []
@@ -902,63 +646,6 @@
 			"failing": []
 		}
 	},
-	"conic-gradient-syntax": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "[ [ [ from [ <angle> | <zero> ] ]? [ at <position> ]? ] || <color-interpolation-method> ]? , <angular-color-stop-list>",
-		"syntax-m": "[ [ [ from [ <angle> | <zero> ] ]? [ at <position> ]? ] || <color-interpolation-method> ]? , <angular-color-stop-list>",
-		"tests": {
-			"passing": [
-				{
-					"property": "background",
-					"value": "conic-gradient(red, orange)"
-				},
-				{
-					"property": "background",
-					"value": "conic-gradient(in oklch from 0turn, red, orange)"
-				},
-				{
-					"property": "background",
-					"value": "conic-gradient(from 0turn in oklch, red, orange)"
-				}
-			],
-			"failing": []
-		}
-	},
-	"conic-gradient()": {
-		"type": "modified",
-		"comment": "",
-		"syntax-b": "conic-gradient( [ from <angle> ]? [ at <position> ]? , <angular-color-stop-list> )",
-		"syntax-a": "conic-gradient( [ <conic-gradient-syntax> ] )",
-		"syntax-m": "conic-gradient( [ <conic-gradient-syntax> ] )",
-		"tests": {
-			"passing": [
-				{
-					"property": "background",
-					"value": "conic-gradient(red, orange, yellow, green, blue)"
-				},
-				{
-					"property": "background",
-					"value": "conic-gradient(from 0.25turn at 50% 30%, #f69d3c, 10deg, #3f87a6, 350deg, #ebf8e1)"
-				},
-				{
-					"property": "background",
-					"value": "conic-gradient(red 6deg, orange 6deg 18deg, yellow 18deg 45deg, green 45deg 110deg, blue 110deg 200deg, purple 200deg)"
-				}
-			],
-			"failing": [
-				{
-					"property": "background",
-					"value": "conic-gradient(at 50% 30% from 0.25turn, #f69d3c, 10deg, #3f87a6, 350deg, #ebf8e1)"
-				},
-				{
-					"property": "background",
-					"value": "conic-gradient(red, blue, from 0.25turn at 50% 30%)"
-				}
-			]
-		}
-	},
 	"container-condition": {
 		"type": "modified",
 		"comment": "",
@@ -976,17 +663,6 @@
 		"syntax-b": "",
 		"syntax-a": "container-progress( <mf-name> [ of <container-name> ]? , <calc-sum> , <calc-sum> )",
 		"syntax-m": "container-progress( <mf-name> [ of <container-name> ]? , <calc-sum> , <calc-sum> )",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"container-query": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "not <query-in-parens> | <query-in-parens> [ [ and <query-in-parens> ]* | [ or <query-in-parens> ]* ]",
-		"syntax-m": "not <query-in-parens> | <query-in-parens> [ [ and <query-in-parens> ]* | [ or <query-in-parens> ]* ]",
 		"tests": {
 			"passing": [],
 			"failing": []
@@ -1218,22 +894,11 @@
 		}
 	},
 	"cubic-bezier-easing-function": {
-		"type": "added",
+		"type": "modified",
 		"comment": "",
-		"syntax-b": "",
+		"syntax-b": "ease | ease-in | ease-out | ease-in-out | cubic-bezier( <number [0,1]> , <number> , <number [0,1]> , <number> )",
 		"syntax-a": "ease | ease-in | ease-out | ease-in-out | <cubic-bezier()>",
-		"syntax-m": "ease | ease-in | ease-out | ease-in-out | <cubic-bezier()>",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"cubic-bezier()": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "cubic-bezier( [ <number [0,1]> , <number> ]#{2} )",
-		"syntax-m": "cubic-bezier( [ <number [0,1]> , <number> ]#{2} )",
+		"syntax-m": false,
 		"tests": {
 			"passing": [],
 			"failing": []
@@ -1261,17 +926,6 @@
 			"failing": []
 		}
 	},
-	"custom-params": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "<dashed-ident> [ <number> | <percentage> | none ]+",
-		"syntax-m": "<dashed-ident> [ <number> | <percentage> | none ]+",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
 	"custom-selector": {
 		"type": "added",
 		"comment": "",
@@ -1279,17 +933,6 @@
 		"syntax-b": "",
 		"syntax-a": "<custom-arg>? : <extension-name> [ ( <custom-arg>+#? ) ]? ;",
 		"syntax-m": "<custom-arg>? : <extension-name> [ ( <custom-arg>+#? ) ]? ;",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"dasharray": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "[ [ <length-percentage> | <number> ]+ ]#",
-		"syntax-m": "[ [ <length-percentage> | <number> ]+ ]#",
 		"tests": {
 			"passing": [],
 			"failing": []
@@ -1323,17 +966,6 @@
 		"syntax-b": "",
 		"syntax-a": "dynamic-range-limit-mix( [ <'dynamic-range-limit'> && <percentage [0,100]> ]#{2,} )",
 		"syntax-m": "dynamic-range-limit-mix( [ <'dynamic-range-limit'> && <percentage [0,100]> ]#{2,} )",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"easing-function": {
-		"type": "modified",
-		"comment": "",
-		"syntax-b": "linear | <cubic-bezier-timing-function> | <step-timing-function>",
-		"syntax-a": "<linear-easing-function> | <cubic-bezier-easing-function> | <step-easing-function>",
-		"syntax-m": "<linear-easing-function> | <cubic-bezier-easing-function> | <step-easing-function>",
 		"tests": {
 			"passing": [],
 			"failing": []
@@ -1383,17 +1015,6 @@
 			"failing": []
 		}
 	},
-	"filter-value-list": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "[ <filter-function> | <url> ]+",
-		"syntax-m": "[ <filter-function> | <url> ]+",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
 	"filter()": {
 		"type": "added",
 		"comment": "",
@@ -1408,9 +1029,9 @@
 	"final-bg-layer": {
 		"type": "modified",
 		"comment": "",
-		"syntax-b": "<'background-color'> || <bg-image> || <bg-position> [ / <bg-size> ]? || <repeat-style> || <attachment> || <box> || <box>",
+		"syntax-b": "<'background-color'> || <bg-image> || <bg-position> [ / <bg-size> ]? || <repeat-style> || <attachment> || <visual-box> || <visual-box>",
 		"syntax-a": "<bg-image> || <bg-position> [ / <bg-size> ]? || <repeat-style> || <attachment> || <visual-box> || <visual-box> || <'background-color'>",
-		"syntax-m": "<bg-image> || <bg-position> [ / <bg-size> ]? || <repeat-style> || <attachment> || <visual-box> || <visual-box> || <'background-color'>",
+		"syntax-m": false,
 		"tests": {
 			"passing": [],
 			"failing": []
@@ -1661,86 +1282,34 @@
 	"hsl()": {
 		"type": "modified",
 		"comment": "",
-		"syntax-b": "hsl( <hue> <percentage> <percentage> [ / <alpha-value> ]? ) | hsl( <hue> , <percentage> , <percentage> , <alpha-value>? )",
+		"syntax-b": "hsl( <hue> , <percentage> , <percentage> , <alpha-value>? ) | hsl( [ <hue> | none ] [ <percentage> | <number> | none ] [ <percentage> | <number> | none ] [ / [ <alpha-value> | none ] ]? )",
 		"syntax-a": "[ <legacy-hsl-syntax> | <modern-hsl-syntax> ]",
-		"syntax-m": "[ <legacy-hsl-syntax> | <modern-hsl-syntax> ]",
+		"syntax-m": false,
 		"tests": {
-			"passing": [
-				{
-					"property": "color",
-					"value": "hsl(20deg, 10%, 5%)"
-				},
-				{
-					"property": "color",
-					"value": "hsl(20deg 10 5)"
-				}
-			],
+			"passing": [],
 			"failing": []
 		}
 	},
 	"hsla()": {
 		"type": "modified",
 		"comment": "",
-		"syntax-b": "hsla( <hue> <percentage> <percentage> [ / <alpha-value> ]? ) | hsla( <hue> , <percentage> , <percentage> , <alpha-value>? )",
+		"syntax-b": "hsla( <hue> , <percentage> , <percentage> , <alpha-value>? ) | hsla( [ <hue> | none ] [ <percentage> | <number> | none ] [ <percentage> | <number> | none ] [ / [ <alpha-value> | none ] ]? )",
 		"syntax-a": "[ <legacy-hsla-syntax> | <modern-hsla-syntax> ]",
-		"syntax-m": "[ <legacy-hsla-syntax> | <modern-hsla-syntax> ]",
+		"syntax-m": false,
 		"tests": {
-			"passing": [
-				{
-					"property": "color",
-					"value": "hsla(20deg, 10%, 5%)"
-				},
-				{
-					"property": "color",
-					"value": "hsla(20deg 10 5)"
-				}
-			],
+			"passing": [],
 			"failing": []
 		}
 	},
 	"hwb()": {
 		"type": "modified",
 		"comment": "",
-		"syntax-b": "hwb( [ <hue> | none ] [ <percentage> | none ] [ <percentage> | none ] [ / [ <alpha-value> | none ] ]? )",
+		"syntax-b": "hwb( [ <hue> | none ] [ <percentage> | <number> | none ] [ <percentage> | <number> | none ] [ / [ <alpha-value> | none ] ]? )",
 		"syntax-a": "hwb( [ from <color> ]? [ <hue> | none ] [ <percentage> | <number> | none ] [ <percentage> | <number> | none ] [ / [ <alpha-value> | none ] ]? )",
-		"syntax-m": "hwb( [ from <color> ]? [ <hue> | none ] [ <percentage> | <number> | none ] [ <percentage> | <number> | none ] [ / [ <alpha-value> | none ] ]? )",
+		"syntax-m": false,
 		"tests": {
-			"passing": [
-				{
-					"property": "color",
-					"value": "hwb(20deg 10% 5%)"
-				},
-				{
-					"property": "color",
-					"value": "hwb(20deg 10 5)"
-				},
-				{
-					"property": "color",
-					"value": "hwb(20deg 10% 5)"
-				},
-				{
-					"property": "color",
-					"value": "hwb(none none none)"
-				},
-				{
-					"property": "color",
-					"value": "hwb(20deg none 5%)"
-				},
-				{
-					"property": "color",
-					"value": "hwb(from red 20deg 10% 5%)"
-				},
-				{
-					"property": "color",
-					"value": "hwb(20deg 10% 5% / 0.5)"
-				}
-			],
-			"failing": [
-				{
-					"property": "color",
-					"value": "hwb(20deg, 10%, 5%)"
-				}
-			]
+			"passing": [],
+			"failing": []
 		}
 	},
 	"ictcp()": {
@@ -1991,11 +1560,11 @@
 		}
 	},
 	"intrinsic-size-keyword": {
-		"type": "added",
-		"comment": "This list is incomplete",
-		"syntax-b": "",
+		"type": "modified",
+		"comment": "",
+		"syntax-b": "min-content | max-content | fit-content",
 		"syntax-a": "auto | max-content | min-content | stretch",
-		"syntax-m": "auto | max-content | min-content | stretch",
+		"syntax-m": false,
 		"tests": {
 			"passing": [],
 			"failing": []
@@ -2037,9 +1606,9 @@
 	"keyframe-selector": {
 		"type": "modified",
 		"comment": "",
-		"syntax-b": "from | to | <percentage> | <timeline-range-name> <percentage>",
+		"syntax-b": "from | to | <percentage [0,100]> | <timeline-range-name> <percentage>",
 		"syntax-a": "from | to | <percentage [0,100]>",
-		"syntax-m": "from | to | <percentage [0,100]> | <timeline-range-name> <percentage>",
+		"syntax-m": false,
 		"tests": {
 			"passing": [],
 			"failing": []
@@ -2469,72 +2038,6 @@
 			"failing": []
 		}
 	},
-	"linear-easing-function": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "linear | <linear()>",
-		"syntax-m": "linear | <linear()>",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"linear-gradient-syntax": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "[ [ <angle> | <zero> | to <side-or-corner> ] || <color-interpolation-method> ]? , <color-stop-list>",
-		"syntax-m": "[ [ <angle> | <zero> | to <side-or-corner> ] || <color-interpolation-method> ]? , <color-stop-list>",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"linear-gradient()": {
-		"type": "modified",
-		"comment": "",
-		"syntax-b": "linear-gradient( [ [ <angle> | to <side-or-corner> ] || <color-interpolation-method> ]? , <color-stop-list> )",
-		"syntax-a": "linear-gradient( [ <linear-gradient-syntax> ] )",
-		"syntax-m": "linear-gradient( [ <linear-gradient-syntax> ] )",
-		"tests": {
-			"passing": [
-				{
-					"property": "background",
-					"value": "linear-gradient(45deg, blue, red)"
-				},
-				{
-					"property": "background",
-					"value": "linear-gradient(to left top, blue, red)"
-				},
-				{
-					"property": "background",
-					"value": "linear-gradient(in hsl longer hue, blue, red)"
-				}
-			],
-			"failing": [
-				{
-					"property": "background",
-					"value": "linear-gradient(in hsl)"
-				},
-				{
-					"property": "background",
-					"value": "linear-gradient()"
-				}
-			]
-		}
-	},
-	"linear()": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "linear( [ <number> && <percentage>{0,2} ]# )",
-		"syntax-m": "linear( [ <number> && <percentage>{0,2} ]# )",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
 	"link-param": {
 		"type": "added",
 		"comment": "",
@@ -2907,31 +2410,6 @@
 			"failing": []
 		}
 	},
-	"named-color": {
-		"type": "modified",
-		"comment": "",
-		"syntax-b": "transparent | aliceblue | antiquewhite | aqua | aquamarine | azure | beige | bisque | black | blanchedalmond | blue | blueviolet | brown | burlywood | cadetblue | chartreuse | chocolate | coral | cornflowerblue | cornsilk | crimson | cyan | darkblue | darkcyan | darkgoldenrod | darkgray | darkgreen | darkgrey | darkkhaki | darkmagenta | darkolivegreen | darkorange | darkorchid | darkred | darksalmon | darkseagreen | darkslateblue | darkslategray | darkslategrey | darkturquoise | darkviolet | deeppink | deepskyblue | dimgray | dimgrey | dodgerblue | firebrick | floralwhite | forestgreen | fuchsia | gainsboro | ghostwhite | gold | goldenrod | gray | green | greenyellow | grey | honeydew | hotpink | indianred | indigo | ivory | khaki | lavender | lavenderblush | lawngreen | lemonchiffon | lightblue | lightcoral | lightcyan | lightgoldenrodyellow | lightgray | lightgreen | lightgrey | lightpink | lightsalmon | lightseagreen | lightskyblue | lightslategray | lightslategrey | lightsteelblue | lightyellow | lime | limegreen | linen | magenta | maroon | mediumaquamarine | mediumblue | mediumorchid | mediumpurple | mediumseagreen | mediumslateblue | mediumspringgreen | mediumturquoise | mediumvioletred | midnightblue | mintcream | mistyrose | moccasin | navajowhite | navy | oldlace | olive | olivedrab | orange | orangered | orchid | palegoldenrod | palegreen | paleturquoise | palevioletred | papayawhip | peachpuff | peru | pink | plum | powderblue | purple | rebeccapurple | red | rosybrown | royalblue | saddlebrown | salmon | sandybrown | seagreen | seashell | sienna | silver | skyblue | slateblue | slategray | slategrey | snow | springgreen | steelblue | tan | teal | thistle | tomato | turquoise | violet | wheat | white | whitesmoke | yellow | yellowgreen",
-		"syntax-a": "aliceblue | antiquewhite | aqua | aquamarine | azure | beige | bisque | black | blanchedalmond | blue | blueviolet | brown | burlywood | cadetblue | chartreuse | chocolate | coral | cornflowerblue | cornsilk | crimson | cyan | darkblue | darkcyan | darkgoldenrod | darkgray | darkgreen | darkgrey | darkkhaki | darkmagenta | darkolivegreen | darkorange | darkorchid | darkred | darksalmon | darkseagreen | darkslateblue | darkslategray | darkslategrey | darkturquoise | darkviolet | deeppink | deepskyblue | dimgray | dimgrey | dodgerblue | firebrick | floralwhite | forestgreen | fuchsia | gainsboro | ghostwhite | gold | goldenrod | gray | green | greenyellow | grey | honeydew | hotpink | indianred | indigo | ivory | khaki | lavender | lavenderblush | lawngreen | lemonchiffon | lightblue | lightcoral | lightcyan | lightgoldenrodyellow | lightgray | lightgreen | lightgrey | lightpink | lightsalmon | lightseagreen | lightskyblue | lightslategray | lightslategrey | lightsteelblue | lightyellow | lime | limegreen | linen | magenta | maroon | mediumaquamarine | mediumblue | mediumorchid | mediumpurple | mediumseagreen | mediumslateblue | mediumspringgreen | mediumturquoise | mediumvioletred | midnightblue | mintcream | mistyrose | moccasin | navajowhite | navy | oldlace | olive | olivedrab | orange | orangered | orchid | palegoldenrod | palegreen | paleturquoise | palevioletred | papayawhip | peachpuff | peru | pink | plum | powderblue | purple | rebeccapurple | red | rosybrown | royalblue | saddlebrown | salmon | sandybrown | seagreen | seashell | sienna | silver | skyblue | slateblue | slategray | slategrey | snow | springgreen | steelblue | tan | teal | thistle | tomato | turquoise | violet | wheat | white | whitesmoke | yellow | yellowgreen",
-		"syntax-m": "transparent | aliceblue | antiquewhite | aqua | aquamarine | azure | beige | bisque | black | blanchedalmond | blue | blueviolet | brown | burlywood | cadetblue | chartreuse | chocolate | coral | cornflowerblue | cornsilk | crimson | cyan | darkblue | darkcyan | darkgoldenrod | darkgray | darkgreen | darkgrey | darkkhaki | darkmagenta | darkolivegreen | darkorange | darkorchid | darkred | darksalmon | darkseagreen | darkslateblue | darkslategray | darkslategrey | darkturquoise | darkviolet | deeppink | deepskyblue | dimgray | dimgrey | dodgerblue | firebrick | floralwhite | forestgreen | fuchsia | gainsboro | ghostwhite | gold | goldenrod | gray | green | greenyellow | grey | honeydew | hotpink | indianred | indigo | ivory | khaki | lavender | lavenderblush | lawngreen | lemonchiffon | lightblue | lightcoral | lightcyan | lightgoldenrodyellow | lightgray | lightgreen | lightgrey | lightpink | lightsalmon | lightseagreen | lightskyblue | lightslategray | lightslategrey | lightsteelblue | lightyellow | lime | limegreen | linen | magenta | maroon | mediumaquamarine | mediumblue | mediumorchid | mediumpurple | mediumseagreen | mediumslateblue | mediumspringgreen | mediumturquoise | mediumvioletred | midnightblue | mintcream | mistyrose | moccasin | navajowhite | navy | oldlace | olive | olivedrab | orange | orangered | orchid | palegoldenrod | palegreen | paleturquoise | palevioletred | papayawhip | peachpuff | peru | pink | plum | powderblue | purple | rebeccapurple | red | rosybrown | royalblue | saddlebrown | salmon | sandybrown | seagreen | seashell | sienna | silver | skyblue | slateblue | slategray | slategrey | snow | springgreen | steelblue | tan | teal | thistle | tomato | turquoise | violet | wheat | white | whitesmoke | yellow | yellowgreen",
-		"tests": {
-			"passing": [
-				{
-					"property": "color",
-					"value": "transparent"
-				},
-				{
-					"property": "color",
-					"value": "aliceblue"
-				}
-			],
-			"failing": [
-				{
-					"property": "color",
-					"value": "foo"
-				}
-			]
-		}
-	},
 	"number-optional-number": {
 		"type": "added",
 		"comment": "",
@@ -3025,17 +2503,6 @@
 			]
 		}
 	},
-	"opacity-value": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "<number> | <percentage>",
-		"syntax-m": "<number> | <percentage>",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
 	"opentype-tag": {
 		"type": "added",
 		"comment": "",
@@ -3086,46 +2553,6 @@
 		"syntax-b": "none | <color> | <url> [ none | <color> ]? | context-fill | context-stroke",
 		"syntax-a": "none | <image> | <svg-paint>",
 		"syntax-m": "none | <color> | <url> [ none | <color> ]? | context-fill | context-stroke | <image> | <svg-paint>",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"paint-box": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "<visual-box> | fill-box | stroke-box",
-		"syntax-m": "<visual-box> | fill-box | stroke-box",
-		"tests": {
-			"passing": [
-				{
-					"property": "offset-path",
-					"value": "ray(contain 200deg) view-box"
-				},
-				{
-					"property": "offset-path",
-					"value": "ray(contain 200deg) content-box"
-				},
-				{
-					"property": "offset-path",
-					"value": "ray(contain 200deg) fill-box"
-				}
-			],
-			"failing": [
-				{
-					"property": "offset-path",
-					"value": "ray(contain 200deg) margin-box"
-				}
-			]
-		}
-	},
-	"palette-mix()": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "palette-mix( <color-interpolation-method> , [ [ normal | light | dark | <palette-identifier> | <palette-mix()> ] && <percentage [0,100]>? ]#{2} )",
-		"syntax-m": "palette-mix( <color-interpolation-method> , [ [ normal | light | dark | <palette-identifier> | <palette-mix()> ] && <percentage [0,100]>? ]#{2} )",
 		"tests": {
 			"passing": [],
 			"failing": []
@@ -3318,83 +2745,6 @@
 			"failing": []
 		}
 	},
-	"radial-extent": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "closest-corner | closest-side | farthest-corner | farthest-side",
-		"syntax-m": "closest-corner | closest-side | farthest-corner | farthest-side",
-		"tests": {
-			"passing": [
-				{
-					"property": "clip-path",
-					"value": "ellipse(closest-corner closest-side at 5rem 6rem)"
-				},
-				{
-					"property": "clip-path",
-					"value": "ellipse(closest-side farthest-corner at 5rem 6rem)"
-				}
-			],
-			"failing": []
-		}
-	},
-	"radial-gradient-syntax": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "[ [ [ <radial-shape> || <radial-size> ]? [ at <position> ]? ] || <color-interpolation-method> ]? , <color-stop-list>",
-		"syntax-m": "[ [ [ <radial-shape> || <radial-size> ]? [ at <position> ]? ] || <color-interpolation-method> ]? , <color-stop-list>",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"radial-gradient()": {
-		"type": "modified",
-		"comment": "",
-		"syntax-b": "radial-gradient( [ <ending-shape> || <size> ]? [ at <position> ]? , <color-stop-list> )",
-		"syntax-a": "radial-gradient( [ <radial-gradient-syntax> ] )",
-		"syntax-m": "radial-gradient( [ <radial-gradient-syntax> ] )",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"radial-shape": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "circle | ellipse",
-		"syntax-m": "circle | ellipse",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"radial-size": {
-		"type": "added",
-		"comment": "https://github.com/w3c/csswg-drafts/issues/10812",
-		"syntax-b": "",
-		"syntax-a": "<radial-extent> | <length [0,∞]> | <length-percentage [0,∞]>{2}",
-		"syntax-m": "<radial-extent> | <length [0,∞]> | <length-percentage [0,∞]>",
-		"tests": {
-			"passing": [
-				{
-					"property": "clip-path",
-					"value": "ellipse(20px 50px)"
-				},
-				{
-					"property": "clip-path",
-					"value": "ellipse(4rem 50% at right center)"
-				},
-				{
-					"property": "clip-path",
-					"value": "ellipse(closest-side closest-side at 5rem 6rem)"
-				}
-			],
-			"failing": []
-		}
-	},
 	"random-item-args": {
 		"type": "added",
 		"comment": "",
@@ -3550,39 +2900,6 @@
 			"failing": []
 		}
 	},
-	"repeating-conic-gradient()": {
-		"type": "modified",
-		"comment": "",
-		"syntax-b": "repeating-conic-gradient( [ from <angle> ]? [ at <position> ]? , <angular-color-stop-list> )",
-		"syntax-a": "repeating-conic-gradient( [ <conic-gradient-syntax> ] )",
-		"syntax-m": "repeating-conic-gradient( [ <conic-gradient-syntax> ] )",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"repeating-linear-gradient()": {
-		"type": "modified",
-		"comment": "",
-		"syntax-b": "repeating-linear-gradient( [ <angle> | to <side-or-corner> ]? , <color-stop-list> )",
-		"syntax-a": "repeating-linear-gradient( [ <linear-gradient-syntax> ] )",
-		"syntax-m": "repeating-linear-gradient( [ <linear-gradient-syntax> ] )",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"repeating-radial-gradient()": {
-		"type": "modified",
-		"comment": "",
-		"syntax-b": "repeating-radial-gradient( [ <ending-shape> || <size> ]? [ at <position> ]? , <color-stop-list> )",
-		"syntax-a": "repeating-radial-gradient( [ <radial-gradient-syntax> ] )",
-		"syntax-m": "repeating-radial-gradient( [ <radial-gradient-syntax> ] )",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
 	"repetition": {
 		"type": "added",
 		"comment": "",
@@ -3634,40 +2951,22 @@
 	"rgb()": {
 		"type": "modified",
 		"comment": "",
-		"syntax-b": "rgb( <percentage>{3} [ / <alpha-value> ]? ) | rgb( <number>{3} [ / <alpha-value> ]? ) | rgb( <percentage>#{3} , <alpha-value>? ) | rgb( <number>#{3} , <alpha-value>? )",
+		"syntax-b": "rgb( <percentage>#{3} , <alpha-value>? ) | rgb( <number>#{3} , <alpha-value>? ) | rgb( [ <number> | <percentage> | none ]{3} [ / [ <alpha-value> | none ] ]? )",
 		"syntax-a": "[ <legacy-rgb-syntax> | <modern-rgb-syntax> ]",
-		"syntax-m": "[ <legacy-rgb-syntax> | <modern-rgb-syntax> ]",
+		"syntax-m": false,
 		"tests": {
-			"passing": [
-				{
-					"property": "color",
-					"value": "rgb(20%, 10%, 5%)"
-				},
-				{
-					"property": "color",
-					"value": "rgb(20 10 5)"
-				}
-			],
+			"passing": [],
 			"failing": []
 		}
 	},
 	"rgba()": {
 		"type": "modified",
 		"comment": "",
-		"syntax-b": "rgba( <percentage>{3} [ / <alpha-value> ]? ) | rgba( <number>{3} [ / <alpha-value> ]? ) | rgba( <percentage>#{3} , <alpha-value>? ) | rgba( <number>#{3} , <alpha-value>? )",
+		"syntax-b": "rgba( <percentage>#{3} , <alpha-value>? ) | rgba( <number>#{3} , <alpha-value>? ) | rgba( [ <number> | <percentage> | none ]{3} [ / [ <alpha-value> | none ] ]? )",
 		"syntax-a": "[ <legacy-rgba-syntax> | <modern-rgba-syntax> ]",
-		"syntax-m": "[ <legacy-rgba-syntax> | <modern-rgba-syntax> ]",
+		"syntax-m": false,
 		"tests": {
-			"passing": [
-				{
-					"property": "color",
-					"value": "rgba(20%, 10%, 5%)"
-				},
-				{
-					"property": "color",
-					"value": "rgba(20 10 5)"
-				}
-			],
+			"passing": [],
 			"failing": []
 		}
 	},
@@ -3750,73 +3049,14 @@
 		}
 	},
 	"scroll-state-feature": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "<ident> : <ident>",
-		"syntax-m": "<ident> : <ident>",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"scroll-state-in-parens": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "( <scroll-state-query> ) | ( <scroll-state-feature> ) | <general-enclosed>",
-		"syntax-m": "( <scroll-state-query> ) | ( <scroll-state-feature> ) | <general-enclosed>",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"scroll-state-query": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "not <scroll-state-in-parens> | <scroll-state-in-parens> [ [ and <scroll-state-in-parens> ]* | [ or <scroll-state-in-parens> ]* ] | <scroll-state-feature>",
-		"syntax-m": "not <scroll-state-in-parens> | <scroll-state-in-parens> [ [ and <scroll-state-in-parens> ]* | [ or <scroll-state-in-parens> ]* ] | <scroll-state-feature>",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"scroll()": {
 		"type": "modified",
 		"comment": "",
-		"syntax-b": "scroll( [ <axis> || <scroller> ]? )",
-		"syntax-a": "scroll( [ <scroller> || <axis> ]? )",
-		"syntax-m": "scroll( [ <scroller> || <axis> ]? )",
+		"syntax-b": "<media-query-list>",
+		"syntax-a": "<ident> : <ident>",
+		"syntax-m": false,
 		"tests": {
-			"passing": [
-				{
-					"property": "animation-timeline",
-					"value": "scroll()"
-				},
-				{
-					"property": "animation-timeline",
-					"value": "scroll(root)"
-				},
-				{
-					"property": "animation-timeline",
-					"value": "scroll(block root)"
-				},
-				{
-					"property": "animation-timeline",
-					"value": "scroll(root block)"
-				}
-			],
-			"failing": [
-				{
-					"property": "animation-timeline",
-					"value": "scroll"
-				},
-				{
-					"property": "animation-timeline",
-					"value": "scroll(root block x)"
-				}
-			]
+			"passing": [],
+			"failing": []
 		}
 	},
 	"shadow": {
@@ -3825,17 +3065,6 @@
 		"syntax-b": "inset? && <length>{2,4} && <color>?",
 		"syntax-a": "<color>? && [ <length>{2} <length [0,∞]>? <length>? ] && inset?",
 		"syntax-m": "<color>? && [ <length>{2} <length [0,∞]>? <length>? ] && inset?",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"shape-box": {
-		"type": "modified",
-		"comment": "",
-		"syntax-b": "<box> | margin-box",
-		"syntax-a": "<visual-box> | margin-box",
-		"syntax-m": "<visual-box> | margin-box",
 		"tests": {
 			"passing": [],
 			"failing": []
@@ -3987,28 +3216,6 @@
 			]
 		}
 	},
-	"step-easing-function": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "step-start | step-end | <steps()>",
-		"syntax-m": "step-start | step-end | <steps()>",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"steps()": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "steps( <integer> , <step-position>? )",
-		"syntax-m": "steps( <integer> , <step-position>? )",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
 	"string()": {
 		"type": "added",
 		"comment": "",
@@ -4132,28 +3339,6 @@
 			"failing": []
 		}
 	},
-	"symbols-type": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "cyclic | numeric | alphabetic | symbolic | fixed",
-		"syntax-m": "cyclic | numeric | alphabetic | symbolic | fixed",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"symbols()": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "symbols( <symbols-type>? [ <string> | <image> ]+ )",
-		"syntax-m": "symbols( <symbols-type>? [ <string> | <image> ]+ )",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
 	"syntax": {
 		"type": "added",
 		"comment": "",
@@ -4243,36 +3428,14 @@
 		}
 	},
 	"text-edge": {
-		"type": "added",
+		"type": "modified",
 		"comment": "",
-		"syntax-b": "",
+		"syntax-b": "[ text | cap | ex | ideographic | ideographic-ink ] [ text | alphabetic | ideographic | ideographic-ink ]?",
 		"syntax-a": "[ text | ideographic | ideographic-ink ] | [ text | ideographic | ideographic-ink | cap | ex ] [ text | ideographic | ideographic-ink | alphabetic ]",
-		"syntax-m": "[ text | ideographic | ideographic-ink ] | [ text | ideographic | ideographic-ink | cap | ex ] [ text | ideographic | ideographic-ink | alphabetic ]",
+		"syntax-m": false,
 		"tests": {
-			"passing": [
-				{
-					"property": "text-box-edge",
-					"value": "text"
-				},
-				{
-					"property": "text-box-edge",
-					"value": "ex alphabetic"
-				},
-				{
-					"property": "text-box-edge",
-					"value": "ex text"
-				}
-			],
-			"failing": [
-				{
-					"property": "text-box-edge",
-					"value": "alphabetic text"
-				},
-				{
-					"property": "text-box-edge",
-					"value": "text ex"
-				}
-			]
+			"passing": [],
+			"failing": []
 		}
 	},
 	"time-percentage": {
@@ -4498,17 +3661,6 @@
 		"syntax-b": "",
 		"syntax-a": "wcag2 | wcag2( [ <number> | [ aa | aaa ] && large? ] )",
 		"syntax-m": "wcag2 | wcag2( [ <number> | [ aa | aaa ] && large? ] )",
-		"tests": {
-			"passing": [],
-			"failing": []
-		}
-	},
-	"xyz": {
-		"type": "added",
-		"comment": "",
-		"syntax-b": "",
-		"syntax-a": "xyz | xyz-d50 | xyz-d65",
-		"syntax-m": "xyz | xyz-d50 | xyz-d65",
 		"tests": {
 			"passing": [],
 			"failing": []

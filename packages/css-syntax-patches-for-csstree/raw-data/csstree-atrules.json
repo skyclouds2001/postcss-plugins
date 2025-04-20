@@ -42,7 +42,7 @@
 				"syntax": "normal | <percentage>"
 			},
 			"font-display": {
-				"syntax": "[ auto | block | swap | fallback | optional ]"
+				"syntax": "auto | block | swap | fallback | optional"
 			},
 			"font-family": {
 				"syntax": "<family-name>"
@@ -72,7 +72,7 @@
 				"syntax": "[ <url> [ format( <string># ) ]? | local( <family-name> ) ]#"
 			},
 			"unicode-range": {
-				"syntax": "<urange>#"
+				"syntax": "<unicode-range-token>#"
 			}
 		}
 	},
@@ -85,7 +85,7 @@
 				"syntax": "<family-name>#"
 			},
 			"override-colors": {
-				"syntax": "[ <integer [0,∞]> <absolute-color-base> ]#"
+				"syntax": "[ <integer [0,∞]> <color> ]#"
 			}
 		}
 	},
@@ -227,6 +227,16 @@
 			},
 			"syntax": {
 				"syntax": "<string>"
+			}
+		}
+	},
+	"view-transition": {
+		"descriptors": {
+			"navigation": {
+				"syntax": "auto | none"
+			},
+			"types": {
+				"syntax": "none | <custom-ident>+"
 			}
 		}
 	}

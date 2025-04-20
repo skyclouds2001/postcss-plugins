@@ -58,5 +58,12 @@
 	},
 	"volta": {
 		"node": "22.12.0"
-	}
+	},
+	"overrides": {
+    "css-tree": {
+			".": "eslint/csstree",
+			"mdn-data": "mdn/data"
+		},
+		"mdn-data": "mdn/data"
+  }
 }

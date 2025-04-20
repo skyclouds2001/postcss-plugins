@@ -51,12 +51,6 @@
 				"syntax-a": "[ normal | <percentage [0,∞]> ]{1,2}",
 				"comment": ""
 			},
-			"font-display": {
-				"type": "modified",
-				"syntax-b": "[ auto | block | swap | fallback | optional ]",
-				"syntax-a": "auto | block | swap | fallback | optional",
-				"comment": ""
-			},
 			"font-language-override": {
 				"type": "added",
 				"syntax-b": "",
@@ -134,12 +128,6 @@
 				"syntax-b": "",
 				"syntax-a": "[ normal | from-font | <percentage [0,∞]> ]{1,2}",
 				"comment": ""
-			},
-			"unicode-range": {
-				"type": "modified",
-				"syntax-b": "<urange>#",
-				"syntax-a": "<unicode-range-token>#",
-				"comment": ""
 			}
 		}
 	},
@@ -195,16 +183,6 @@
 			}
 		}
 	},
-	"font-palette-values": {
-		"descriptors": {
-			"override-colors": {
-				"type": "modified",
-				"syntax-b": "[ <integer [0,∞]> <absolute-color-base> ]#",
-				"syntax-a": "[ <integer [0,∞]> <color> ]#",
-				"comment": ""
-			}
-		}
-	},
 	"function": {
 		"descriptors": {
 			"result": {
@@ -221,22 +199,6 @@
 				"type": "modified",
 				"syntax-b": "<length>{1,2} | auto | [ <page-size> || [ portrait | landscape ] ]",
 				"syntax-a": "<length [0,∞]>{1,2} | auto | [ <page-size> || [ portrait | landscape ] ]",
-				"comment": ""
-			}
-		}
-	},
-	"view-transition": {
-		"descriptors": {
-			"navigation": {
-				"type": "added",
-				"syntax-b": "",
-				"syntax-a": "auto | none",
-				"comment": ""
-			},
-			"types": {
-				"type": "added",
-				"syntax-b": "",
-				"syntax-a": "none | <custom-ident>+",
 				"comment": ""
 			}
 		}

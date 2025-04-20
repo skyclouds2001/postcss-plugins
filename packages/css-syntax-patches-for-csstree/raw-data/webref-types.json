@@ -2,12 +2,6 @@
 	"abs()": {
 		"syntax": "abs( <calc-sum> )"
 	},
-	"absolute-color-base": {
-		"syntax": "<hex-color> | <absolute-color-function> | <named-color> | transparent"
-	},
-	"absolute-color-function": {
-		"syntax": "<rgb()> | <rgba()> | <hsl()> | <hsla()> | <hwb()> | <lab()> | <lch()> | <oklab()> | <oklch()> | <color()>"
-	},
 	"absolute-size": {
 		"syntax": "xx-small | x-small | small | medium | large | x-large | xx-large | xxx-large"
 	},
@@ -20,8 +14,8 @@
 	"alpha-value": {
 		"syntax": "<number> | <percentage>"
 	},
-	"anchor-element": {
-		"syntax": "<dashed-ident>"
+	"an+b": {
+		"syntax": "odd | even | <integer> | <n-dimension> | '+'? † n | -n | <ndashdigit-dimension> | '+'? † <ndashdigit-ident> | <dashndashdigit-ident> | <n-dimension> <signed-integer> | '+'? † n <signed-integer> | -n <signed-integer> | <ndash-dimension> <signless-integer> | '+'? † n- <signless-integer> | -n- <signless-integer> | <n-dimension> [ '+' | '-' ] <signless-integer> | '+'? † n [ '+' | '-' ] <signless-integer> | -n [ '+' | '-' ] <signless-integer>"
 	},
 	"anchor-name": {
 		"syntax": "<dashed-ident>"
@@ -159,7 +153,7 @@
 		"syntax": "normal | multiply | screen | overlay | darken | lighten | color-dodge | color-burn | hard-light | soft-light | difference | exclusion | hue | saturation | color | luminosity"
 	},
 	"blur()": {
-		"syntax": "blur( <length> )"
+		"syntax": "blur( <length>? )"
 	},
 	"border-style": {
 		"syntax": "none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset"
@@ -174,7 +168,7 @@
 		"syntax": "content-box | padding-box | border-box | margin-box | fill-box | stroke-box | view-box"
 	},
 	"brightness()": {
-		"syntax": "brightness( <number-percentage> )"
+		"syntax": "brightness( [ <number> | <percentage> ]? )"
 	},
 	"calc-constant": {
 		"syntax": "e | pi | infinity | -infinity | NaN"
@@ -213,7 +207,7 @@
 		"syntax": "<percentage>? && <image>"
 	},
 	"circle()": {
-		"syntax": "circle( [ <shape-radius> ]? [ at <position> ]? )"
+		"syntax": "circle( <radial-size>? [ at <position> ]? )"
 	},
 	"clamp()": {
 		"syntax": "clamp( [ <calc-sum> | none ] , <calc-sum> , [ <calc-sum> | none ] )"
@@ -363,7 +357,7 @@
 		"syntax": "contrast-color( <color> )"
 	},
 	"contrast()": {
-		"syntax": "contrast( [ <number-percentage> ] )"
+		"syntax": "contrast( [ <number> | <percentage> ]? )"
 	},
 	"control-point": {
 		"syntax": "[ <position> | <relative-control-point> ]"
@@ -414,7 +408,7 @@
 		"syntax": "ease | ease-in | ease-out | ease-in-out | <cubic-bezier()>"
 	},
 	"cubic-bezier-timing-function": {
-		"syntax": "ease | ease-in | ease-out | ease-in-out | cubic-bezier( <number [0,1]> , <number> , <number [0,1]> , <number> )"
+		"syntax": "ease | ease-in | ease-out | ease-in-out | <cubic-bezier()>"
 	},
 	"cubic-bezier()": {
 		"syntax": "cubic-bezier( [ <number [0,1]> , <number> ]#{2} )"
@@ -437,6 +431,9 @@
 	"dasharray": {
 		"syntax": "[ [ <length-percentage> | <number> ]+ ]#"
 	},
+	"dashndashdigit-ident": {
+		"syntax": "<ident-token>"
+	},
 	"declaration": {
 		"syntax": "<ident-token> : <declaration-value>? [ '!' important ]?"
 	},
@@ -447,7 +444,7 @@
 		"syntax": "ActiveBorder | ActiveCaption | AppWorkspace | Background | ButtonHighlight | ButtonShadow | CaptionText | InactiveBorder | InactiveCaption | InactiveCaptionText | InfoBackground | InfoText | Menu | MenuText | Scrollbar | ThreeDDarkShadow | ThreeDFace | ThreeDHighlight | ThreeDLightShadow | ThreeDShadow | Window | WindowFrame | WindowText"
 	},
 	"deprecated-system-color": {
-		"syntax": "ActiveBorder | ActiveCaption | AppWorkspace | Background | ButtonFace | ButtonHighlight | ButtonShadow | ButtonText | CaptionText | GrayText | Highlight | HighlightText | InactiveBorder | InactiveCaption | InactiveCaptionText | InfoBackground | InfoText | Menu | MenuText | Scrollbar | ThreeDDarkShadow | ThreeDFace | ThreeDHighlight | ThreeDLightShadow | ThreeDShadow | Window | WindowFrame | WindowText"
+		"syntax": "ActiveBorder | ActiveCaption | AppWorkspace | Background | ButtonHighlight | ButtonShadow | CaptionText | InactiveBorder | InactiveCaption | InactiveCaptionText | InfoBackground | InfoText | Menu | MenuText | Scrollbar | ThreeDDarkShadow | ThreeDFace | ThreeDHighlight | ThreeDLightShadow | ThreeDShadow | Window | WindowFrame | WindowText"
 	},
 	"device-cmyk()": {
 		"syntax": "<legacy-device-cmyk-syntax> | <modern-device-cmyk-syntax>"
@@ -477,7 +474,7 @@
 		"syntax": "block | inline | run-in"
 	},
 	"drop-shadow()": {
-		"syntax": "drop-shadow( <length>{2,3} <color>? )"
+		"syntax": "drop-shadow( [ <color>? && <length>{2,3} ] )"
 	},
 	"dynamic-range-limit-mix()": {
 		"syntax": "dynamic-range-limit-mix( [ <'dynamic-range-limit'> && <percentage [0,100]> ]#{2,} )"
@@ -495,10 +492,7 @@
 		"syntax": "element( <id-selector> )"
 	},
 	"ellipse()": {
-		"syntax": "ellipse( [ <shape-radius>{2} ]? [ at <position> ]? )"
-	},
-	"ending-shape": {
-		"syntax": "circle | ellipse"
+		"syntax": "ellipse( <radial-size>? [ at <position> ]? )"
 	},
 	"env()": {
 		"syntax": "env( <custom-ident> <integer [0,∞]>* , <declaration-value>? )"
@@ -533,9 +527,6 @@
 	"feature-value-name": {
 		"syntax": "<ident>"
 	},
-	"fill-rule": {
-		"syntax": "nonzero | evenodd"
-	},
 	"filter-function": {
 		"syntax": "<blur()> | <brightness()> | <contrast()> | <drop-shadow()> | <grayscale()> | <hue-rotate()> | <invert()> | <opacity()> | <sepia()> | <saturate()>"
 	},
@@ -544,9 +535,6 @@
 	},
 	"-ms-filter-function-legacy": {
 		"syntax": "<ident-token> | <function-token> <any-value>? )"
-	},
-	"filter-function-list": {
-		"syntax": "[ <filter-function> | <url> ]+"
 	},
 	"-ms-filter-function-list": {
 		"syntax": "<-ms-filter-function>+"
@@ -565,6 +553,9 @@
 	},
 	"first-valid()": {
 		"syntax": "first-valid( <declaration-value># )"
+	},
+	"fit-content()": {
+		"syntax": "fit-content( <length-percentage [0,∞]> )"
 	},
 	"fixed-breadth": {
 		"syntax": "<length-percentage [0,∞]>"
@@ -614,6 +605,9 @@
 	"forgiving-selector-list": {
 		"syntax": "<complex-real-selector-list>"
 	},
+	"form-control-identifier": {
+		"syntax": "select"
+	},
 	"frequency-percentage": {
 		"syntax": "[ <frequency> | <percentage> ]"
 	},
@@ -656,9 +650,6 @@
 	"generic-incomplete": {
 		"syntax": "ui-serif | ui-sans-serif | ui-monospace | ui-rounded"
 	},
-	"generic-name": {
-		"syntax": "serif | sans-serif | cursive | fantasy | monospace"
-	},
 	"generic-script-specific": {
 		"syntax": "generic( fangsong ) | generic( kai ) | generic( khmer-mul ) | generic( nastaliq )"
 	},
@@ -690,7 +681,7 @@
 		"syntax": "-webkit-gradient( <-webkit-gradient-type> , <-webkit-gradient-point> [, <-webkit-gradient-point> | , <-webkit-gradient-radius> , <-webkit-gradient-point> ] [, <-webkit-gradient-radius> ]? [, <-webkit-gradient-color-stop> ]* )"
 	},
 	"grayscale()": {
-		"syntax": "grayscale( <number-percentage> )"
+		"syntax": "grayscale( [ <number> | <percentage> ]? )"
 	},
 	"grid-line": {
 		"syntax": "auto | <custom-ident> | [ [ <integer [-∞,-1]> | <integer [1,∞]> ] && <custom-ident>? ] | [ span && [ <integer [1,∞]> || <custom-ident> ] ]"
@@ -717,7 +708,7 @@
 		"syntax": "[ shorter | longer | increasing | decreasing ] hue"
 	},
 	"hue-rotate()": {
-		"syntax": "hue-rotate( <angle> )"
+		"syntax": "hue-rotate( [ <angle> | <zero> ]? )"
 	},
 	"hwb()": {
 		"syntax": "hwb( [ from <color> ]? [ <hue> | none ] [ <percentage> | <number> | none ] [ <percentage> | <number> | none ] [ / [ <alpha-value> | none ] ]? )"
@@ -801,7 +792,7 @@
 		"syntax": "auto | max-content | min-content | stretch"
 	},
 	"invert()": {
-		"syntax": "invert( <number-percentage> )"
+		"syntax": "invert( [ <number> | <percentage> ]? )"
 	},
 	"isolation-mode": {
 		"syntax": "auto | isolate"
@@ -814,9 +805,6 @@
 	},
 	"keyframe-block": {
 		"syntax": "<keyframe-selector># { <declaration-list> }"
-	},
-	"keyframe-block-list": {
-		"syntax": "<keyframe-block>+"
 	},
 	"keyframe-selector": {
 		"syntax": "from | to | <percentage [0,100]>"
@@ -1061,6 +1049,9 @@
 	"mq-boolean": {
 		"syntax": "<integer [0,1]>"
 	},
+	"n-dimension": {
+		"syntax": "<dimension-token>"
+	},
 	"name-repeat": {
 		"syntax": "repeat( [ <integer [1,∞]> | auto-fill ] , <line-names>+ )"
 	},
@@ -1070,11 +1061,17 @@
 	"namespace-prefix": {
 		"syntax": "<ident>"
 	},
+	"ndash-dimension": {
+		"syntax": "<dimension-token>"
+	},
+	"ndashdigit-dimension": {
+		"syntax": "<dimension-token>"
+	},
+	"ndashdigit-ident": {
+		"syntax": "<ident-token>"
+	},
 	"ns-prefix": {
 		"syntax": "[ <ident-token> | '*' ]? '|'"
-	},
-	"nth": {
-		"syntax": "<an-plus-b> | even | odd"
 	},
 	"number-one-or-greater": {
 		"syntax": "<number [1,∞]>"
@@ -1110,10 +1107,13 @@
 		"syntax": "<number> | <percentage>"
 	},
 	"opacity()": {
-		"syntax": "opacity( [ <number-percentage> ] )"
+		"syntax": "opacity( [ <number> | <percentage> ]? )"
 	},
 	"opentype-tag": {
 		"syntax": "<string>"
+	},
+	"outline-line-style": {
+		"syntax": "none | dotted | dashed | solid | double | groove | ridge | inset | outset"
 	},
 	"outline-radius": {
 		"syntax": "<length> | <percentage>"
@@ -1161,7 +1161,7 @@
 		"syntax": "palette-mix( <color-interpolation-method> , [ [ normal | light | dark | <palette-identifier> | <palette-mix()> ] && <percentage [0,100]>? ]#{2} )"
 	},
 	"path()": {
-		"syntax": "path( [ <fill-rule> , ]? <string> )"
+		"syntax": "path( <'fill-rule'>? , <string> )"
 	},
 	"perspective()": {
 		"syntax": "perspective( [ <length [0,∞]> | none ] )"
@@ -1173,7 +1173,7 @@
 		"syntax": "hsl | hwb | lch | oklch"
 	},
 	"polygon()": {
-		"syntax": "polygon( <fill-rule>? , [ <length-percentage> <length-percentage> ]# )"
+		"syntax": "polygon( <'fill-rule'>? , [ <length-percentage> <length-percentage> ]# )"
 	},
 	"position": {
 		"syntax": "<position-one> | <position-two> | <position-four>"
@@ -1383,7 +1383,7 @@
 		"syntax": "running( <custom-ident> )"
 	},
 	"saturate()": {
-		"syntax": "saturate( <number-percentage> )"
+		"syntax": "saturate( [ <number> | <percentage> ]? )"
 	},
 	"scale()": {
 		"syntax": "scale( [ <number> | <percentage> ]#{1,2} )"
@@ -1431,7 +1431,7 @@
 		"syntax": "center | start | end | self-start | self-end | flex-start | flex-end"
 	},
 	"sepia()": {
-		"syntax": "sepia( <number-percentage> )"
+		"syntax": "sepia( [ <number> | <percentage> ]? )"
 	},
 	"shadow": {
 		"syntax": "<color>? && [ <length>{2} <length [0,∞]>? <length>? ] && inset?"
@@ -1448,9 +1448,6 @@
 	"shape-command": {
 		"syntax": "<move-command> | <line-command> | close | <horizontal-line-command> | <vertical-line-command> | <curve-command> | <smooth-command> | <arc-command>"
 	},
-	"shape-radius": {
-		"syntax": "<length-percentage> | closest-side | farthest-side"
-	},
 	"shape()": {
 		"syntax": "shape( <'fill-rule'>? from <position> , <shape-command># )"
 	},
@@ -1459,6 +1456,12 @@
 	},
 	"sign()": {
 		"syntax": "sign( <calc-sum> )"
+	},
+	"signed-integer": {
+		"syntax": "<number-token>"
+	},
+	"signless-integer": {
+		"syntax": "<number-token>"
 	},
 	"simple-selector": {
 		"syntax": "<type-selector> | <subclass-selector>"
@@ -1549,9 +1552,6 @@
 	},
 	"step-position": {
 		"syntax": "jump-start | jump-end | jump-none | jump-both | start | end"
-	},
-	"step-timing-function": {
-		"syntax": "step-start | step-end | steps( <integer> [, <step-position> ]? )"
 	},
 	"steps()": {
 		"syntax": "steps( <integer> , <step-position>? )"

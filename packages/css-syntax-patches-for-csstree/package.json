@@ -40,7 +40,8 @@
 	},
 	"devDependencies": {
 		"@webref/css": "^6.20.4",
-		"css-tree": "^3.1.0"
+		"css-tree": "eslint/csstree",
+		"mdn-data": "mdn/data"
 	},
 	"scripts": {
 		"build": "node ./scripts/index.mjs",
@@ -62,5 +63,12 @@
 	],
 	"volta": {
 		"extends": "../../package.json"
-	}
+	},
+	"overrides": {
+    "css-tree": {
+			".": "eslint/csstree",
+			"mdn-data": "mdn/data"
+		},
+		"mdn-data": "mdn/data"
+  }
 }
